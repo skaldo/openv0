@@ -5,6 +5,7 @@ const tiktokenEncoder = tiktoken.get_encoding("cl100k_base");
 require("dotenv").config();
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
+  ...JSON.parse(process.env.AZURE_OPENAI_CONFIG),
 });
 
 const FRAMEWORKS_EXTENSION_MAP = {

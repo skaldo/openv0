@@ -6,6 +6,7 @@ const { OpenAI } = require("openai");
 require("dotenv").config();
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
+  ...JSON.parse(process.env.AZURE_OPENAI_CONFIG),
 });
 
 async function run(query) {
